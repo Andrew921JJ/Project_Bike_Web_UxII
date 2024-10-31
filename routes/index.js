@@ -5,14 +5,29 @@ var router = express.Router();
 router.get("/", function (req, res, next) {
   res.render("index", { title: "Express" });
 });
+
 router.get("/Dirt", function (req, res, next) {
-  res.send("<h1>Dirt Bike</h1>");
+  res.render("bike", {
+    title: "Dirt",
+    picture: "images/Dirt.jpg",
+    desc: "Средний котёнок в семье. Очень любит футбол. ",
+  });
 });
+
 router.get("/DownHill", function (req, res, next) {
-  res.send("<h1>DownHill Bike</h1>");
+  res.render("bike", {
+    title: "img/DownHill",
+    picture: "images/DH.jpg",
+    desc: "Средний котёнок в семье. Очень любит футбол. ",
+  });
 });
+
 router.get("/Enduro", function (req, res, next) {
-  res.send("<h1>Enduro Bike</h1>");
+  res.render("bike", {
+    title: "Enduro",
+    picture: "images/Enduro.PNG",
+    desc: "Средний котёнок в семье. Очень любит футбол. ",
+  });
 });
 
 module.exports = router;
