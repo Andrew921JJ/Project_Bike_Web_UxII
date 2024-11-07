@@ -16,7 +16,7 @@ router.get("/Dirt", function (req, res, next) {
 
 router.get("/DownHill", function (req, res, next) {
   res.render("bike", {
-    title: "img/DownHill",
+    title: "DownHill",
     picture: "images/DH.jpg",
     desc: "Средний котёнок в семье. Очень любит футбол. ",
   });
