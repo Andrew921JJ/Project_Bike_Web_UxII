@@ -1,21 +1,21 @@
 var data = [
   {
-    title: "Карамелька",
-    nick: "karamelka",
-    avatar: "/images/karamelka.jpeg",
-    desc: "Cамый младший член семьи. Коронная фраза — «Я знаю, что.",
+    title: "downhill",
+    nick: "downhill",
+    avatar: "/images/DH.jpg",
+    desc: "downhill",
   },
   {
-    title: "Компот",
-    nick: "kompot",
-    avatar: "/images/kompont.png",
-    desc: "Cтший котёнок в семье. Ходит в школу. Очень любит",
+    title: "dirt",
+    nick: "dirt",
+    avatar: "/images/Dirt.jpg",
+    desc: "dirt",
   },
   {
-    title: "Коржик",
-    nick: "korzhik",
-    avatar: "/images/korzhik.png",
-    desc: "Средний котёнок в семье. Очень любит футбол. Любит",
+    title: "enduro",
+    nick: "enduro",
+    avatar: "/images/Enduro.png",
+    desc: "Enduro",
   },
 ];
 module.exports.data = data;
