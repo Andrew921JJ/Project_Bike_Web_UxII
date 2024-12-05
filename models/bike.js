@@ -4,8 +4,8 @@ var bikeSchema = new Schema({
   title: String,
   nick: {
     type: String,
-    unique: true,
     required: true,
+    unique: true,
   },
   avatar: String,
   desc: String,
