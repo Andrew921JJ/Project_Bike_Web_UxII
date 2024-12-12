@@ -6,6 +6,7 @@ var logger = require("morgan");
 
 var mongoose = require("mongoose");
 mongoose.connect("mongodb://localhost/bike2024");
+var session = require("express-session");
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
@@ -28,7 +29,17 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
-
+//
+app.use(
+  session({
+    secret: "ThreeCats",
+    cookie: { maxAge: 60 * 3000 },
+    proxy: true,
+    resave: true,
+    saveUninitialized: true,
+  })
+);
+//
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 
