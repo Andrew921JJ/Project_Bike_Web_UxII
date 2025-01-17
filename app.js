@@ -50,6 +50,8 @@ app.use(function (req, res, next) {
 });
 
 //
+app.use(require("./middlewares/createMenu.js"));
+//
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 

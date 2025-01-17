@@ -51,6 +51,15 @@
       crossorigin="anonymous"
     ></script>
     <a href="">sdsdfsdS</a>
+    <!--  -->
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <% if(typeof nav == 'object' && nav){ nav.forEach(function(item){ %>
+      <li class="nav-item">
+        <a class="nav-link" href="/bikes/<%= item.nick %>"><%= item.title %></a>
+      </li>
+      <% })} %>
+    </ul>
+    <!--  -->
   </body>
 </html>
 <body></body>
