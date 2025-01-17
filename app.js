@@ -17,6 +17,9 @@ var bikes = require("./routes/bikes");
 //
 var app = express();
 
+// -------
+var MongoStore = require("connect-mongo");
+// -------
 // view engine setup
 
 app.engine("ejs", require("ejs-locals"));
@@ -32,13 +35,15 @@ app.use(express.static(path.join(__dirname, "public")));
 //
 app.use(
   session({
-    secret: "ThreeCats",
+    secret: "Bike",
     cookie: { maxAge: 60 * 3000 },
     proxy: true,
     resave: true,
     saveUninitialized: true,
+    store: MongoStore.create({ mongoUrl: "mongodb://localhost/bike2024" }),
   })
 );
+//
 //
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
