@@ -36,7 +36,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(
   session({
     secret: "Bike",
-    cookie: { maxAge: 60 * 3000 },
+    cookie: { maxAge: 60 * 1000 },
     proxy: true,
     resave: true,
     saveUninitialized: true,
@@ -44,6 +44,11 @@ app.use(
   })
 );
 //
+app.use(function (req, res, next) {
+  req.session.counter = req.session.counter + 1 || 1;
+  next();
+});
+
 //
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
