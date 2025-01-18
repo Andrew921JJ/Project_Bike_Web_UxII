@@ -11,8 +11,13 @@ var Bike = require("../models/bike").Bike;
 //   res.send(req.params.nick);
 // });
 
-/* Страница котов */
-router.get("/:nick", async function (req, res, next) {
+//
+var express = require("express");
+var router = express.Router();
+var Bike = require("../models/bike").Bike;
+var checkAuth = require("../middlewares/checkAuth.js");
+//
+router.get("/:nick", checkAuth, async function (req, res, next) {
   console.log("Z pltcm");
   var bikes = await Bike.find({ nick: req.params.nick });
   console.log(bikes);
